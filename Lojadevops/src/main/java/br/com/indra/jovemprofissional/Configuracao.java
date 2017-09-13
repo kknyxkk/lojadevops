@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 
+
 @SpringBootApplication
 
 public class Configuracao {
@@ -18,15 +19,15 @@ public class Configuracao {
         SpringApplication.run(Configuracao.class, args);
     }
     
-    @Bean
+   /* @Bean
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-        dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:treina");
-        dataSource.setUsername("system");
-        dataSource.setPassword("K12345678k$");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306:lojadevops");
+        dataSource.setUsername("loja");
+        dataSource.setPassword("loja");
         return dataSource;
-    }
+    }*/
     
     
     
