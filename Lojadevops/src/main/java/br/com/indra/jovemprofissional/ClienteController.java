@@ -11,8 +11,45 @@ public class ClienteController {
 //Mapeamento do Index
 	@RequestMapping("/")
 	public String index(){
-		return "index";
+		return "indexLoja";
 	}
+	
+	 @RequestMapping(value= "logar", method = RequestMethod.POST)
+	    public String verificar(@RequestParam("username") String username, @RequestParam("password") String password, Model model)
+	    {
+	    	String resul="teste";
+	    	
+	    	if(!valida(username) && !valida(password)){
+	    		System.out.println("campo em branco");
+	    		return "indexLoja";
+	    	}	
+	    	
+	    	
+	        if(username.equals(resul) && password.equals(resul))
+	        {	        
+	        	System.out.println("logou");
+	        	//Proxima pagina-->
+	        	return "listaconvidados";
+	        	
+	    	}else{
+	    		
+	    		System.out.println("erro login");
+	    		return "indexLoja";
+	    	}
+	    		
+	    }
+	 
+	 //metodo de validação para inputs diferentes de null
+	 public Boolean valida(String entrada)
+	    {
+	    	if(!entrada.isEmpty())
+	    	{
+	    		return true;
+	    	}else {
+	    		return false;
+			}
+	    }
+	 
 	//Mapeamento do ListaClientes
 	/*@RequestMapping("listaconvidados")
 	public String listaConvidados(Model model){
@@ -59,7 +96,7 @@ public class ClienteController {
 		return "listaconvidados";
 	}*/
 	
-	/*@Autowired												//
+	/*@Autowired											//
 	private ClienteRepository repositoryCli;				//
 															//Amarração com objeto do BD
 	@Autowired												//
