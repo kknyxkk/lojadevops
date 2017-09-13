@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>ListaVIP</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<div id="listaDeConvidados">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nome</th>
+
+					</tr>
+				</thead>
+				<tr th:each="conv : ${listaClientes}">
+
+					<td><span th:text="${conv.ID_CLIENTE}"></span></td>
+					<td><span th:text="${conv.NO_CLIENTE}"></span></td>
+
+				</tr>
+			</table>
+		</div>
+		
+		<hr />
+
+		<form action="salvar" method="post">
+			<div class="form-group">
+				<label for="ID_CLIENTE">ID</label> <input type="text"
+					class="form-control" id="ID_CLIENTE" name="ID_CLIENTE" placeholder="ID" />
+			</div>
+			<div class="form-group">
+				<label for="NO_CLIENTE">Nome</label> <input type="text"
+					class="form-control" id="NO_CLIENTE" name="NO_CLIENTE" placeholder="Nome" />
+			</div>
+
+			<button type="submit" class="btn btn-success">Insert</button>
+		</form>
+		
+		<hr />
+
+		<form action="deletar" method="post">
+			<div class="form-group">
+				<label for="ID_CLIENTE">ID</label> <input type="text"
+					class="form-control" id="ID_CLIENTE" name="ID_CLIENTE" placeholder="ID" />
+			</div>
+			
+			<button type="submit" class="btn btn-success">Delete</button>
+		</form>
+
+	<hr/>
+		<div class="container">
+			<div class="jumbotron" align="right" style="margin-top: 100px;">				
+				
+					<a href="listaequipamentos" class="btn btn-lg btn-primary">Lista de Equipamentos</a>
+				
+			</div>
+		</div>
+
+		<hr />
+	</div>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

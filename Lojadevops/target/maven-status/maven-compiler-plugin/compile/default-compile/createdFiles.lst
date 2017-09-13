@@ -1,0 +1,6 @@
+br\com\indra\jovemprofissional\repository\EquipamentoRepository.class
+br\com\indra\jovemprofissional\Configuracao.class
+br\com\indra\jovemprofissional\ClienteController.class
+br\com\indra\jovemprofissional\model\Equipamento.class
+br\com\indra\jovemprofissional\model\Cliente.class
+br\com\indra\jovemprofissional\repository\ClienteRepository.class
