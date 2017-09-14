@@ -32,12 +32,15 @@ body {
 	padding: 0px;
 }
 
-header {
-	background-image: url(img/BGDV.jpg);
-	background-size: cover;
-	background-position: top center;
-	height: 100%;
+.Bg_img img
+{	
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: auto;
+	width: 100%;
 }
+
+
 </style>
 
 </head>
@@ -75,11 +78,14 @@ header {
 			</nav>
 		</div>
 	</header>
-	<!-- 
+	<div class="Bg_img">
+		<img src="img/BGDV.jpg"/>
+	</div>
+	
 	<footer>
 		<strong>© Loja Devops</strong>
 	</footer>
-	-->
+	
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
