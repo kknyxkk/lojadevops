@@ -9,7 +9,7 @@
 <style>
 body {
 	width: 100%;
-	background-color: #fff;
+	height: 100%;
 }
 
 .jumbotron {
@@ -21,38 +21,65 @@ body {
 	font-weight: bold;
 	color: blue;
 }
+
+.container-fluid {
+	margin: 0px;
+	padding: 0px;
+}
+
+.form-inline {
+	margin: 0px;
+	padding: 0px;
+}
+
+header {
+	background-image: url(img/BGDV.jpg);
+	background-size: cover;
+	background-position: top center;
+	height: 100%;
+}
 </style>
 
 </head>
 
 <body>
+	<header>
+		<div class="container-fluid">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<a class="navbar-brand" href="/produtos">Loja Devops</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-item nav-link active" href="#">Home <span
+							class="sr-only">(current)</span></a> <a class="nav-item nav-link"
+							href="#">Features</a> <a class="nav-item nav-link" href="#">Pricing</a>
+					</div>
+				</div>
+				<form class="navbar-form" action="logar" method="post">
+					<div class="form-group form-inline">
+						<div class="input-group">
+							<input class="form-control mr-sm-1" type="text"
+								placeholder="Username" /> <input class="form-control mr-sm-1"
+								type="text" placeholder="Password" />
 
-
-	<div class="container">
-		<div class="jumbotron" align="center" style="margin-top: 50px;">
-			<h1>
-				Loja Devops
-				<p class="titulo"></p>
-				<br />Login
-			</h1>
-			<div align="center">
-				<!-- form de login -->
-				<form action="logar" method="post">
-					<p align="left">Username:</p>
-					<input type="text" class="form-control" id="username"
-						name="username" placeholder="username" />
-					<p align="left">
-						<br />Senha:
-					</p>
-					<input type="password" class="form-control" id="password"
-						name="password" placeholder="password" />
-					<button type="submit" class="btn btn-success">Entrar</button>
-					<button type="button" onclick="cadastro" class="btn btn-success">Cadastrar</button>
+							<button class="btn btn-outline-success my-2 my-sm-0"
+								type="submit">Entrar</button>
+						</div>
+					</div>
 				</form>
-			</div>
+			</nav>
 		</div>
-	</div>
-
+	</header>
+	<!-- 
+	<footer>
+		<strong>© Loja Devops</strong>
+	</footer>
+	-->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

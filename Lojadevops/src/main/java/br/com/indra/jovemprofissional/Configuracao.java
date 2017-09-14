@@ -13,13 +13,13 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 @SpringBootApplication
 
 public class Configuracao {
-	
-    public static void main(String[] args){
-    	
-        SpringApplication.run(Configuracao.class, args);
-    }
-    
-   /* @Bean
+
+	public static void main(String[] args){
+
+		SpringApplication.run(Configuracao.class, args);
+	}
+
+	/* @Bean
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
@@ -28,8 +28,8 @@ public class Configuracao {
         dataSource.setPassword("loja");
         return dataSource;
     }*/
-    
-    
-    
-   
+
+
+
+
 }
