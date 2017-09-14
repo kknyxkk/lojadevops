@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Loja Devops - Sua loja automatizada</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+
+<style>
+body {
+	width: 100%;
+	background-color: #fff;
+}
+
+.jumbotron {
+	height: 80%;
+	background-color: #fff;
+}
+
+.carousel-indicators li {
+	background-color: olive;
+	box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.titulo {
+	font-weight: bold;
+	color: blue;
+}
+
+#slideprod {
+	margin-top: 50px;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.img-responsive,.img-thumbnail>img,.img-thumbnail a>img,.carousel-inner>.carousel-item>img,.carousel-inner>.carousel-item>a>img
+	{
+	display: block;
+	width: auto;
+	height: 400px;
+}
+
+.container-fluid {
+	margin: 0px;
+	padding: 0px;
+}
+</style>
+
+</head>
+
+<body>
+
+
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="/produtos">Loja Devops</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link active" href="#">Home <span
+						class="sr-only">(current)</span></a> <a class="nav-item nav-link"
+						href="#">Features</a> <a class="nav-item nav-link" href="#">Pricing</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<section class="sliderprodutos">
+		<div class="container-fluid" id="slideprod">
+
+			<div id="carouselProdutos" class="carousel slide"
+				data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carouselProdutos" data-slide-to="0"
+						class="active"></li>
+					<li data-target="#carouselProdutos" data-slide-to="1"></li>
+					<li data-target="#carouselProdutos" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner" role="listbox">
+					<!-- Wrapper for Slides -->
+					<div class="carousel-item active">
+						<img class="img-thumbnail rounded mx-auto d-block"
+							src="img\Relogio1.jpg" alt="Produto 1" />
+					</div>
+					<div class="carousel-item">
+						<img class="img-thumbnail rounded mx-auto d-block"
+							src="img\Carro.png" alt="Produto 2" />
+					</div>
+					<div class="carousel-item">
+						<img class="img-thumbnail rounded mx-auto d-block"
+							src="img\maca.jpg" alt="Produto 3" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -7,11 +7,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 @Controller
-public class ClienteController {
+public class LojaController {
 //Mapeamento do Index
 	@RequestMapping("/")
 	public String index(){
 		return "indexLoja";
+	}
+	
+	@RequestMapping("/produtos")
+	public String produtos(){
+		return "produtos";
 	}
 	
 	 @RequestMapping(value= "logar", method = RequestMethod.POST)
@@ -22,17 +27,15 @@ public class ClienteController {
 	    	if(!valida(username) && !valida(password)){
 	    		System.out.println("campo em branco");
 	    		return "indexLoja";
-	    	}	
-	    	
+	    	}	    	
 	    	
 	        if(username.equals(resul) && password.equals(resul))
 	        {	        
 	        	System.out.println("logou");
 	        	//Proxima pagina-->
-	        	return "listaconvidados";
+	        	return "produtos";
 	        	
-	    	}else{
-	    		
+	    	}else{	    		
 	    		System.out.println("erro login");
 	    		return "indexLoja";
 	    	}

@@ -1,66 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Login</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        
-        
-        <style>
-		   	body
-		   	{
-		   	width: 100%;
-		   	background-color: #A9A9A9;
-		   	}
-		   	
-		   	.container
-		   	{
-		   	margin-top:20px;
-		   	width:90%;
-		   	height:80%;
-		   	background-color: #fff;
-		   	border: 2px solid blue;
-		   	}
-		   	
-		   	.jumbotron
-		   	{
-		   	height:80%;
-		   	background-color: #fff;
-		   	
-		   	}
-		   	
-		   	.titulo
-		   	{
-		   	font-weight: bold;
-		   	color: blue;
-		   	}
-		   	
-   			
-  	 </style>  
-        
-    </head>
-    
-    <body>
-      
-     
-    <div class="container">
-        <div class="jumbotron" align="center" style="margin-top: 50px;">
-            <h1>Loja Devops<p class="titulo"></p><br/>Login</h1>
-            <div align="center">
-            <!-- form de login -->
-		    <form action="logar" method="post">
-		    <p align="left">Username:</p>
-		    <input type="text" class="form-control" id="username" name="username" placeholder="username"/>
-		    <p align="left"><br/>Senha:</p>
-		    <input type="password" class="form-control" id="password" name="password" placeholder="password" />
-		    <button type="submit" class="btn btn-success">Entrar</button>
-		     <button type="button" onclick="cadastro" class="btn btn-success">Cadastrar</button>
-			</form>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Loja Devops - Sua loja automatizada</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+
+<style>
+body {
+	width: 100%;
+	background-color: #fff;
+}
+
+.jumbotron {
+	height: 80%;
+	background-color: #fff;
+}
+
+.titulo {
+	font-weight: bold;
+	color: blue;
+}
+</style>
+
+</head>
+
+<body>
+
+
+	<div class="container">
+		<div class="jumbotron" align="center" style="margin-top: 50px;">
+			<h1>
+				Loja Devops
+				<p class="titulo"></p>
+				<br />Login
+			</h1>
+			<div align="center">
+				<!-- form de login -->
+				<form action="logar" method="post">
+					<p align="left">Username:</p>
+					<input type="text" class="form-control" id="username"
+						name="username" placeholder="username" />
+					<p align="left">
+						<br />Senha:
+					</p>
+					<input type="password" class="form-control" id="password"
+						name="password" placeholder="password" />
+					<button type="submit" class="btn btn-success">Entrar</button>
+					<button type="button" onclick="cadastro" class="btn btn-success">Cadastrar</button>
+				</form>
 			</div>
-        </div>
-    </div>
-   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    </body>
+		</div>
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
 </html>
