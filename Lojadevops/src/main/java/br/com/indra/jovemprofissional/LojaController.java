@@ -1,13 +1,29 @@
 package br.com.indra.jovemprofissional;
 
+//rhino
+import java.io.FileNotFoundException;
+import groovy.util.ScriptException;
+
+//classes minhas
+import br.com.indra.jovemprofissional.repository.*;
+import br.com.indra.jovemprofissional.model.*;
+
+//spring
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.Repository;
+import org.springframework.data.repository.support.Repositories;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
 @Controller
-public class LojaController {
+public class LojaController{
+	@Autowired
+	private UserRepository repository;
+
+	
 	//Mapeamento do Index
 	@RequestMapping("/")
 	public String index(){
@@ -20,12 +36,12 @@ public class LojaController {
 	}
 
 	@RequestMapping(value= "logar", method = RequestMethod.POST)
-	public String verificar(@RequestParam("Username") String username, @RequestParam("Password") String password, Model model)
+	public String verificar(@RequestParam("Username") String nome, @RequestParam("Password") String senha, Model model)
 	{
 		String resul="teste";
-		System.out.println("oi");
-
-		if(username.equals(resul) && password.equals(resul))
+		repository.exists(nome);
+		
+		if(nome.equals(resul) && senha.equals(resul))
 		{	        
 			System.out.println("logou");
 			//Proxima pagina-->
@@ -33,7 +49,35 @@ public class LojaController {
 
 		}else{	    		
 			System.out.println("erro login");
+			
 			return "indexLoja";
+		}
+
+	}
+	
+
+	//mapeamento cadastro
+	@RequestMapping("cadastro")
+	public String salvar(@RequestParam("username") String nome, @RequestParam("password") String senha){
+
+		if(valida(nome) && valida(senha)){
+			if(!repository.exists(nome)){
+
+			Usuario novoUsuario = new Usuario();
+
+			novoUsuario.setUSERNAME(nome);
+			novoUsuario.setPASSWORD(senha);
+			repository.save(novoUsuario);
+		
+			}
+			System.out.println("Sucesso");	    	
+			return "indexloja";
+			
+		} else{	
+
+
+			System.out.println("erro cadastro");
+			return "cadastro";
 		}
 
 	}
@@ -48,7 +92,9 @@ public class LojaController {
 			return false;
 		}
 	}
+	
 
+	
 	//Mapeamento do ListaClientes
 	/*@RequestMapping("listaconvidados")
 	public String listaConvidados(Model model){

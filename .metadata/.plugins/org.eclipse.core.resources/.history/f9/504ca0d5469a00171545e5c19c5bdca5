@@ -1,0 +1,10 @@
+package br.com.indra.jovemprofissional.repository;
+
+import org.springframework.data.repository.CrudRepository;
+import br.com.indra.jovemprofissional.model.Usuario;
+
+
+public interface UserRepository extends CrudRepository<Usuario, String> {
+
+}
+
