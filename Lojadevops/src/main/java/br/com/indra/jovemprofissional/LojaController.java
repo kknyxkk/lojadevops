@@ -20,20 +20,16 @@ public class LojaController {
 	}
 
 	@RequestMapping(value= "logar", method = RequestMethod.POST)
-	public String verificar(@RequestParam("username") String username, @RequestParam("password") String password, Model model)
+	public String verificar(@RequestParam("Username") String username, @RequestParam("Password") String password, Model model)
 	{
 		String resul="teste";
-
-		if(!valida(username) && !valida(password)){
-			System.out.println("campo em branco");
-			return "indexLoja";
-		}
+		System.out.println("oi");
 
 		if(username.equals(resul) && password.equals(resul))
 		{	        
 			System.out.println("logou");
 			//Proxima pagina-->
-			return "produtos";
+			return "/produtos";
 
 		}else{	    		
 			System.out.println("erro login");

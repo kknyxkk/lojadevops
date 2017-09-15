@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Loja Devops - Sua loja automatizada</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+
+<style>
+body {
+	width: 100%;
+	height: 100%;
+}
+
+.jumbotron {
+	height: 80%;
+	background-color: #fff;
+}
+
+.titulo {
+	font-weight: bold;
+	color: blue;
+}
+
+.container-fluid {
+	margin: 0px;
+	padding: 0px;
+}
+
+.form-inline {
+	margin: 0px;
+	padding: 0px;
+}
+
+.Bg_img img
+{	
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: auto;
+	width: 100%;
+}
+
+
+</style>
+
+</head>
+
+<body>
+	<header>
+		<div class="container-fluid">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<a class="navbar-brand" href="/produtos">Loja Devops</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-item nav-link active" href="/">Home<span
+							class="sr-only">(current)</span></a> <a class="nav-item nav-link"
+							href="/produtos">Produtos</a> <a class="nav-item nav-link" href="#">Pricing</a>
+					</div>
+				</div>
+				<form class="navbar-form" action="logar" method="post">
+					<div class="form-group form-inline">
+						<div class="input-group">
+							<input class="form-control mr-sm-1" type="text"
+								placeholder="Username" /> <input class="form-control mr-sm-1"
+								type="text" placeholder="Password" />
+
+							<button class="btn btn-outline-success my-2 my-sm-0"
+								type="submit">Entrar</button>
+						</div>
+					</div>
+				</form>
+			</nav>
+		</div>
+	</header>
+	<div class="Bg_img">
+		<img src="img/abstracts_accepted.jpg"/>
+	</div>
+	
+	<footer>
+		<strong>© Loja Devops</strong>
+	</footer>
+	
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
