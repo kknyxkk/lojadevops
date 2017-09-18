@@ -40,10 +40,73 @@
 		SpanAlert.innerText = "";
 		Form.submit();
 	}
+	
+	function resetFields()
+	{
+	var SpanNome = document.getElementById('AlertNm');
+	var SpanEmail = document.getElementById('AlertEm');
+	var SpanUser = document.getElementById('AlertUsr');
+	var SpanPass = document.getElementById('AlertPass');
+	var SpanConfPass = document.getElementById('AlertPassconf');	
+	SpanNome.innerText = "";
+	SpanEmail.innerText = "";
+	SpanUser.innerText = "";
+	SpanPass.innerText = "";
+	SpanConfPass.innerText = "";	
+	}
+	
+	function Check() {
+
+		var Nomeinput = document.getElementById('inputNomeCompleto');
+		var Emailinput = document.getElementById('inputEmail');
+		var Usrinput = document.getElementById('inputUsername');
+		var Passinput = document.getElementById('inputPass');
+		var ConfPassinput = document.getElementById('inputRepeatPass');
+		var Form = document.getElementById('formCadastro');
+		var SpanNome = document.getElementById('AlertNm');
+		var SpanEmail = document.getElementById('AlertEm');
+		var SpanUser = document.getElementById('AlertUsr');
+		var SpanPass = document.getElementById('AlertPass');
+		var SpanConfPass = document.getElementById('AlertPassconf');
+
+		if ((Nomeinput.value) == "") {
+			alert("O campo Nome é obrigatório");
+			resetFields();
+			SpanNome.innerText = "Preencha o campo Nome Completo!";
+			
+			return;
+		} else {
+			if ((Emailinput.value) == "") {
+				alert("O campo Email é obrigatório");
+				resetFields();
+				SpanEmail.innerText = "Preencha o campo Email!";
+				return;
+			} else {
+				if((Usrinput.value) == ""){
+					alert("O campo Usuário é obrigatório!")
+					resetFields();
+					SpanUser.innerText = "Preencha o campo Usuário!";
+					return;
+				} else {
+					if((Passinput.value) == ""){
+						alert("O campo Senha é obrigatório!")
+						resetFields();
+						SpanPass.innerText = "Preencha o campo Senha!";
+						return;
+					} else {
+						if(ConfPassinput != Passinput){
+							alert("As senhas não corespondem!")
+							resetFields();
+							SpanConfPass.innerText = "Senha incorreta";
+						}
+					}
+				}
+			}
+		}		
+		resetFields();
+		Form.submit();
+	}
 </script>
-
-
-
 <style>
 body {
 	width: 100%;
@@ -176,32 +239,37 @@ footer {
 	</div>
 	<section class="container-fluid">
 	
-		<form action="cadastrado" method="post" >
+		<form id="formCadastro" action="cadastrado" method="post" >
 			<div class="form-group">
 				<label for="inputNomeCompleto">Nome completo</label> <input
 					type="text" class="form-control" name="nomeCompleto" id="inputNomeCompleto"
 					aria-describedby="nomeHelp"
 					placeholder="ex. Fulano Beltrano de Tal" />
+					<span class="Alert" id="AlertNm"></span>
 			</div>
 			<div class="form-group">
 				<label for="inputEmail">Email</label> <input type="email"
 					class="form-control" name="email" id="inputEmail"
 					placeholder="ex. example_email@mail.com" />
+					<span class="Alert" id="AlertEm"></span>
 			</div>
 			<div class="form-group">
 				<label for="inputUsername">Usuario</label> <input type="text"
 					class="form-control" id="inputUsername" name="username" placeholder="" />
+					<span class="Alert" id="AlertUsr"></span>
 			</div>
 			<div class="form-group">
 				<label for="inputEmail">Senha</label> <input type="Password"
-					class="form-control" id="inputEmail" name="password" placeholder="" /> <small
+					class="form-control" id="inputPass" name="password" placeholder="" /> <small
 					id="passHelp" class="form-text text-muted">Mínimo 6 (seis)
 					caracteres</small>
+					<span class="Alert" id="AlertPass"></span>
 			</div>
 			<div class="form-group">
 				<label for="inputRepeatEmail">Confirme a Senha</label> <input
-					type="Password" class="form-control" id="inputRepeatEmail"
+					type="Password" class="form-control" id="inputRepeatPass"
 					placeholder=""/>
+					<span class="Alert" id="AlertPassconf"></span>
 			</div>
 
 			<!--  
@@ -211,7 +279,7 @@ footer {
 			</label>
 		</div>
 		-->
-			<button type="submit" class="btn btn-primary">Cadastrar</button>
+			<button type="button" OnClick="Check()" class="btn btn-primary">Cadastrar</button>
 		</form>
 	</section>
 	<div class="background">
