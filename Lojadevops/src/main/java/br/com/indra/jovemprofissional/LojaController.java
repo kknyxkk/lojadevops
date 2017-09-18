@@ -29,7 +29,13 @@ public class LojaController {
 	public String produtos(){
 		return "produtos";
 	}
+	//mapeamento da pagina de cadastros
+	@RequestMapping("cadastro")
+	public String cadastro(){
+		return "cadastro";
+	}
 
+	//Metodo de checagem do login com o banco de dados
 	@RequestMapping(value= "logar", method = RequestMethod.POST)
 	public String verificar(@RequestParam("Username") String nome, @RequestParam("Password") String senha, Model model)
 	{
@@ -54,49 +60,33 @@ public class LojaController {
 		return "indexLoja";
 			
 		}
-		return "indexLoja";
-		//old method
-		
-		/*if(nome.equals(resul) && senha.equals(resul))
-		{	        
-			System.out.println("logou");
-			//Proxima pagina-->
-			return "/produtos";
-
-		}else{	    		
-			System.out.println("erro login");
-			
-			return "indexLoja";
-		}*/
-			
+		return "indexLoja";		
 
 	}
-	
 
 	//mapeamento cadastro
-	@RequestMapping("cadastro")
+	@RequestMapping("cadastrado")
 	public String salvar(@RequestParam("username") String nome, @RequestParam("password") String senha){
 
-		/*if(valida(nome) && valida(senha)){
+		if(valida(nome) && valida(senha)){
 			if(!repository.exists(nome)){
 
-			Usuario novoUsuario = new Usuario();
+				Usuario novoUsuario = new Usuario();
 
-			novoUsuario.setUSERNAME(nome);
-			novoUsuario.setPASSWORD(senha);
-			repository.save(novoUsuario);
-		
+				novoUsuario.setUSERNAME(nome);
+				novoUsuario.setPASSWORD(senha);
+				repository.save(novoUsuario);
+
 			}
 			System.out.println("Sucesso");	    	
 			return "indexloja";
-			
+
 		} else{	
 
 
 			System.out.println("erro cadastro");
 			return "cadastro";
-		}*/
-		return "indexloja";
+		}
 	}
 
 	//metodo de validação para inputs diferentes de null
@@ -109,62 +99,6 @@ public class LojaController {
 			return false;
 		}
 	}
+
 	
 }
-	
-	//Mapeamento do ListaClientes
-	/*@RequestMapping("listaconvidados")
-	public String listaConvidados(Model model){
-
-		Iterable<Cliente> clientes = repositoryCli.findAll();
-		model.addAttribute("listaClientes", clientes);
-
-		return "listaconvidados";
-	}*/
-
-	//Mapeamento do listaequipamentos
-	/*@RequestMapping("listaequipamentos")
-	public String listaEquipamentos(Model model){
-
-		Iterable<Equipamento> equips = repositoryEquip.findAll();
-		model.addAttribute("listaEquipamentos", equips);
-
-
-		return "listaequipamentos";
-	}*/
-
-	//Mapeamento para o metodo salvar
-	/*@RequestMapping(value= "salvar", method = RequestMethod.POST)
-	public String salvar(@RequestParam("ID_CLIENTE") int ID_CLIENTE, @RequestParam("NO_CLIENTE") String NO_CLIENTE, Model model){
-
-		Cliente novoCliente = new Cliente(ID_CLIENTE, NO_CLIENTE);
-		repositoryCli.save(novoCliente);
-
-		Iterable<Cliente> clientes = repositoryCli.findAll();
-		model.addAttribute("listaClientes", clientes);
-
-		return "listaconvidados";
-	}*/
-	//Mapeamento para o metodo deletar
-	/*@RequestMapping(value= "deletar", method = RequestMethod.POST)
-	public String deletar(@RequestParam("ID_CLIENTE") int ID_CLIENTE, Model model){
-
-		Cliente delCliente = repositoryCli.findOne(ID_CLIENTE);
-		repositoryCli.delete(delCliente);	
-
-		Iterable<Cliente> clientes = repositoryCli.findAll();
-		model.addAttribute("listaClientes", clientes);
-
-		return "listaconvidados";
-	}*/
-
-	/*@Autowired											//
-	private ClienteRepository repositoryCli;				//
-															//Amarração com objeto do BD
-	@Autowired												//
-	private EquipamentoRepository repositoryEquip;			//
-	 */
-
-
-
-//}
