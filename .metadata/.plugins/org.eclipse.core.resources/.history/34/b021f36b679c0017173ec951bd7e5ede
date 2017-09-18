@@ -1,0 +1,88 @@
+package br.com.indra.jovemprofissional.model;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.mysql.cj.jdbc.PreparedStatement;
+import java.sql.*;
+
+import br.com.indra.jovemprofissional.repository.UserRepository;
+
+public class SqlRepository implements UserRepository {
+
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void delete(String arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void delete(Usuario arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void delete(Iterable<? extends Usuario> arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean exists(String arg0) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Iterable<Usuario> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Iterable<Usuario> findAll(Iterable<String> arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Usuario findOne(String arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public <S extends Usuario> S save(S arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public <S extends Usuario> Iterable<S> save(Iterable<S> arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String GetUser(Usuario user) {
+		
+		String sql = "insert into contatos " +
+                "(nome,email,endereco,dataNascimento) " +
+                "values (?,?,?,?)";
+		
+		return null;
+	}
+
+	public String GetPass(Usuario user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String GetValue(Usuario user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+}

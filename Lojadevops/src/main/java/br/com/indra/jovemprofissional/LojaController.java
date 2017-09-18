@@ -1,8 +1,5 @@
 package br.com.indra.jovemprofissional;
 
-//rhino
-import java.io.FileNotFoundException;
-import groovy.util.ScriptException;
 
 //classes minhas
 import br.com.indra.jovemprofissional.repository.*;
@@ -10,8 +7,6 @@ import br.com.indra.jovemprofissional.model.*;
 
 //spring
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.Repository;
-import org.springframework.data.repository.support.Repositories;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class LojaController{
+public class LojaController {
+	
 	@Autowired
 	private UserRepository repository;
-
 	
 	//Mapeamento do Index
 	@RequestMapping("/")
@@ -38,10 +33,31 @@ public class LojaController{
 	@RequestMapping(value= "logar", method = RequestMethod.POST)
 	public String verificar(@RequestParam("Username") String nome, @RequestParam("Password") String senha, Model model)
 	{
-		String resul="teste";
-		repository.exists(nome);
 		
-		if(nome.equals(resul) && senha.equals(resul))
+		System.out.println("Login...");
+		
+		if(repository.exists(nome))
+		{
+			
+			if(senha.equals(repository.findOne(nome).getPASSWORD()))
+			{	        
+				System.out.println("logou");
+				//Proxima pagina-->
+				return "/produtos";
+
+			}
+			
+		}else{
+			
+		
+		System.out.println("erro login");
+		return "indexLoja";
+			
+		}
+		return "indexLoja";
+		//old method
+		
+		/*if(nome.equals(resul) && senha.equals(resul))
 		{	        
 			System.out.println("logou");
 			//Proxima pagina-->
@@ -51,7 +67,8 @@ public class LojaController{
 			System.out.println("erro login");
 			
 			return "indexLoja";
-		}
+		}*/
+			
 
 	}
 	
@@ -60,7 +77,7 @@ public class LojaController{
 	@RequestMapping("cadastro")
 	public String salvar(@RequestParam("username") String nome, @RequestParam("password") String senha){
 
-		if(valida(nome) && valida(senha)){
+		/*if(valida(nome) && valida(senha)){
 			if(!repository.exists(nome)){
 
 			Usuario novoUsuario = new Usuario();
@@ -78,8 +95,8 @@ public class LojaController{
 
 			System.out.println("erro cadastro");
 			return "cadastro";
-		}
-
+		}*/
+		return "indexloja";
 	}
 
 	//metodo de validação para inputs diferentes de null
@@ -93,7 +110,7 @@ public class LojaController{
 		}
 	}
 	
-
+}
 	
 	//Mapeamento do ListaClientes
 	/*@RequestMapping("listaconvidados")
@@ -150,4 +167,4 @@ public class LojaController{
 
 
 
-}
+//}

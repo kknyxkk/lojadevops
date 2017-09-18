@@ -3,10 +3,7 @@ package br.com.indra.jovemprofissional.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import br.com.indra.jovemprofissional.repository.UserRepository;
-
-
-@Entity(name = "TB_USERLOGIN")
+@Entity(name = "tb_usuario")
 public class Usuario{
 
 	@Id	
@@ -39,12 +36,5 @@ public class Usuario{
 		PASS = _PASSWORD;
 		
 	}
-	
-
-	
-
-
-
-
 
 }
