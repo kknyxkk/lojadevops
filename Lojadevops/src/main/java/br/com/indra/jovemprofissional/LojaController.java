@@ -25,7 +25,7 @@ public class LojaController {
 		return "indexLoja";
 	}
 	//mapeamento da pagina de produtos
-	@RequestMapping("/produtos")
+	@RequestMapping("produtos")
 	public String produtos(){
 		return "produtos";
 	}
@@ -50,7 +50,6 @@ public class LojaController {
 				System.out.println("logou");
 				//Proxima pagina-->
 				return "/produtos";
-
 			}
 			
 		}else{
@@ -66,15 +65,19 @@ public class LojaController {
 
 	//mapeamento cadastro
 	@RequestMapping("cadastrado")
-	public String salvar(@RequestParam("username") String nome, @RequestParam("password") String senha){
+	public String salvar(@RequestParam("username") String nome, @RequestParam("password") String senha,@RequestParam("nomeCompleto") String nomeCom,@RequestParam("email") String email){
 
-		if(valida(nome) && valida(senha)){
-			if(!repository.exists(nome)){
-
+		if(valida(nome) && valida(senha) && valida(nomeCom) && valida(email)){
+			System.out.println("Não existe");
+			if(!repository.exists(nome) || !repository.exists(email)){
+				System.out.println("Criando objeto");
 				Usuario novoUsuario = new Usuario();
-
+				System.out.println("Setando obj");
 				novoUsuario.setUSERNAME(nome);
 				novoUsuario.setPASSWORD(senha);
+				novoUsuario.setNOMECOMPLETO(nomeCom);
+				novoUsuario.setEMAIL(email);
+				System.out.println("salvando");
 				repository.save(novoUsuario);
 
 			}

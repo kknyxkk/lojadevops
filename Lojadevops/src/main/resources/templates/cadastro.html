@@ -137,7 +137,7 @@ footer {
 	<header>
 		<div class="container-fluid" id="nav">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-				<a class="navbar-brand" href="/produtos">Loja Devops</a>
+				<a class="navbar-brand" href="/">Loja Devops</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navBarPrincipal" aria-controls="navBarPrincipal"
 					aria-expanded="false" aria-label="Toggle navigation">
@@ -145,9 +145,8 @@ footer {
 				</button>
 				<div class="collapse navbar-collapse" id="navBarPrincipal">
 					<div class="navbar-nav">
-						<a class="nav-item nav-link active" href="/">Home<span
-							class="sr-only">(current)</span></a> <a class="nav-item nav-link"
-							href="/produtos">Produtos</a> <a href="cadastro"><button
+						 <a class="nav-item nav-link"
+							href="produtos">Produtos</a> <a href="cadastro"><button
 								class="btn btn-outline-secondary my-2 my-sm-0" type="button">Cadastrar</button>
 						</a>
 					</div>
@@ -176,32 +175,33 @@ footer {
 		</div>
 	</div>
 	<section class="container-fluid">
-		<form>
+	
+		<form action="cadastrado" method="post" >
 			<div class="form-group">
 				<label for="inputNomeCompleto">Nome completo</label> <input
-					type="text" class="form-control" id="inputNomeCompleto"
+					type="text" class="form-control" name="nomeCompleto" id="inputNomeCompleto"
 					aria-describedby="nomeHelp"
-					placeholder="ex. João da Silva Oliveira" />
-			</div>
-			<div class="form-group">
-				<label for="inputUsername">Usuario</label> <input type="text"
-					class="form-control" id="inputUsername" placeholder="" />
+					placeholder="ex. Fulano Beltrano de Tal" />
 			</div>
 			<div class="form-group">
 				<label for="inputEmail">Email</label> <input type="email"
-					class="form-control" id="inputEmail"
+					class="form-control" name="email" id="inputEmail"
 					placeholder="ex. example_email@mail.com" />
 			</div>
 			<div class="form-group">
+				<label for="inputUsername">Usuario</label> <input type="text"
+					class="form-control" id="inputUsername" name="username" placeholder="" />
+			</div>
+			<div class="form-group">
 				<label for="inputEmail">Senha</label> <input type="Password"
-					class="form-control" id="inputEmail" placeholder="" /> <small
+					class="form-control" id="inputEmail" name="password" placeholder="" /> <small
 					id="passHelp" class="form-text text-muted">Mínimo 6 (seis)
 					caracteres</small>
 			</div>
 			<div class="form-group">
-				<label for="inputRepeatEmail">Repita a Senha</label> <input
+				<label for="inputRepeatEmail">Confirme a Senha</label> <input
 					type="Password" class="form-control" id="inputRepeatEmail"
-					placeholder="" />
+					placeholder=""/>
 			</div>
 
 			<!--  

@@ -10,7 +10,10 @@ public class Usuario{
 	private String USERNAME;
 
 	private String PASS;
-
+	
+	private String NOME_COMPLETO;
+	
+	private String EMAIL;
 	
 	public Usuario(){}
 
@@ -36,5 +39,20 @@ public class Usuario{
 		PASS = _PASSWORD;
 		
 	}
-
+	
+	public String getNOMECOMPLETO() {
+		return NOME_COMPLETO;
+	}
+	
+	public void setNOMECOMPLETO(String _NOMECOMPLETO) {
+		NOME_COMPLETO = _NOMECOMPLETO;
+	}
+	
+	public String getEMAIL() {
+		return EMAIL;
+	}
+	
+	public void setEMAIL(String _EMAIL) {
+		EMAIL = _EMAIL;
+	}
 }
