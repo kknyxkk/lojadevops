@@ -32,7 +32,7 @@ footer {
 	height: 400px;
 }
 
-.carousel-indicators li {
+#indicadoresSliderIndex li {
 	background-color: #ccc;
 	box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
 	height: 5px;
@@ -55,7 +55,7 @@ footer {
 
 #sliderProdutosIndex {
 	background: none;
-	background-color: rgba(255, 255, 255, 0.9);
+	background-color: rgba(255, 255, 255, 0.5);
 	margin: 0;
 	padding: 4%;
 	padding-top: 0;
@@ -104,10 +104,6 @@ footer {
 	margin-right: -3%;
 }
 
-.card {
-	
-}
-
 #NameField
 {
 	width: 150px;
@@ -116,3 +112,10 @@ footer {
 	margin-left: 950px;
 	color:#5bc0de;
 }
+#card img {
+	max-height: 50%;
+	max-width: 50%;
+	height: auto;
+	margin: 0;
+	padding: 0;	
+	width: 20rem;	
