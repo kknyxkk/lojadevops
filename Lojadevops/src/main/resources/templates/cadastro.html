@@ -73,7 +73,6 @@
 			alert("O campo Nome é obrigatório");
 			resetFields();
 			SpanNome.innerText = "Preencha o campo Nome Completo!";
-
 			return;
 		} else {
 			if ((Emailinput.value) == "") {
@@ -93,11 +92,12 @@
 						resetFields();
 						SpanPass.innerText = "Preencha o campo Senha!";
 						return;
-					} else {
-						if (ConfPassinput != Passinput) {
+					} else {						
+						if (ConfPassinput.value != Passinput.value) {
 							alert("As senhas não corespondem!")
 							resetFields();
 							SpanConfPass.innerText = "Senha incorreta";
+							return;
 						}
 					}
 				}
@@ -208,9 +208,10 @@ footer {
 	<header>
 		<div class="container-fluid" id="nav">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-				<a class="navbar-brand" href="/">
-				<img src="img/mascote.png" width="40" height="40" class="d-inline-block align-top" alt=""/>
-				Loja Devops</a>
+				<a class="navbar-brand" href="/"> <img src="img/mascote.png"
+					width="40" height="40" class="d-inline-block align-top" alt="" />
+					Loja Devops
+				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navBarPrincipal" aria-controls="navBarPrincipal"
 					aria-expanded="false" aria-label="Toggle navigation">
@@ -232,8 +233,8 @@ footer {
 								placeholder="Username" id="Username" /> <input
 								class="form-control mr-sm-1" type="password" name="Password"
 								placeholder="Password" id="Password" />
-							<button class="btn btn-outline-info my-2 my-sm-0"
-								type="button" onclick="ErroValidacao()">Entrar</button>
+							<button class="btn btn-outline-info my-2 my-sm-0" type="button"
+								onclick="ErroValidacao()">Entrar</button>
 						</div>
 						<span class="Alert" id="Alert"></span>
 					</div>
@@ -246,7 +247,7 @@ footer {
 			<h1 class="display-3">Cadastre-se!</h1>
 			<p class="lead">E receba promoções automatizadas.</p>
 			<div id="mascote">
-				<img class="img-fluid" alt="Mascote" src="img/mascote.png"/>
+				<img class="img-fluid" alt="Mascote" src="img/mascote.png" />
 			</div>
 		</div>
 	</div>

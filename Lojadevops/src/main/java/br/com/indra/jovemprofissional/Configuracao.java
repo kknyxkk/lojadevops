@@ -12,8 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Configuracao {
 
 	public static void main(String[] args){
-		SpringApplication.run(Configuracao.class, args);
-		
+		SpringApplication.run(Configuracao.class, args);		
 	}
 	
 
