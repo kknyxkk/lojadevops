@@ -2,8 +2,6 @@ package br.com.indra.jovemprofissional;
 
 
 //classes minhas
-import javax.swing.JOptionPane;
-
 import br.com.indra.jovemprofissional.repository.*;
 import br.com.indra.jovemprofissional.model.*;
 

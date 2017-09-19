@@ -5,6 +5,7 @@
 <title>Loja Devops - Sua loja automatizada</title>
 <link href="img/mascote.png" rel="icon" />
 <link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/estilo.css" type="text/css" rel="stylesheet" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -107,100 +108,6 @@
 		Form.submit();
 	}
 </script>
-<style>
-body {
-	width: 100%;
-	height: 100%;
-}
-
-.jumbotron {
-	height: 80%;
-	background-color: #fff;
-}
-
-.titulo {
-	font-weight: bold;
-	color: blue;
-}
-
-#nav {
-	margin: 0px;
-	padding: 0px;
-}
-
-.form-inline {
-	margin: 0px;
-	padding: 0px;
-}
-
-.sliderprodutos {
-	height: auto;
-	width: 100%;
-	margin-top: 50px;
-	background-color: #fff;
-	overflow: hidden;
-}
-
-.img-responsive,.img-thumbnail>img,.img-thumbnail a>img,.carousel-inner>.carousel-item>img,.carousel-inner>.carousel-item>a>img
-	{
-	display: block;
-	width: auto;
-	height: 400px;
-}
-
-.carousel-indicators li {
-	background-color: olive;
-	box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-
-.container-fluid {
-	background: none;
-	background-color: rgba(255, 255, 255, 0.9);
-	margin: 0;
-	padding: 9%;
-	padding-top: 0px;
-	min-width: 100%;
-	min-height: 100%;
-	height: 100%;
-	background-attachment: fixed;
-	background-position: center;
-	margin: 0;
-	min-width: 100%;
-	min-width: 100%;
-}
-
-footer {
-	background-color: black;
-	color: white;
-}
-
-.background {
-	position: absolute;
-	margin: 0 auto;
-	top: 0;
-	left: 0;
-	z-index: -100;
-}
-
-.Alert {
-	color: #f00;
-}
-
-#carouselProdutos {
-	background-color: rgba(25, 25, 25, 0.5);
-}
-
-#ChamadaCadastro {
-	margin: 0px;
-}
-
-#mascote {
-	display: inline-block;
-	float: right;
-	margin-top: -16%;
-	margin-right: -3%;
-}
-</style>
 
 </head>
 
@@ -227,7 +134,7 @@ footer {
 				</div>
 				<form class="navbar-form" action="logar" method="post"
 					id="formLogin">
-					<div class="form-group form-inline">
+					<div id="FormLogin" class="form-group form-inline">
 						<div class="input-group">
 							<input class="form-control mr-sm-1" type="text" name="Username"
 								placeholder="Username" id="Username" /> <input
@@ -252,7 +159,7 @@ footer {
 		</div>
 	</div>
 
-	<section class="container-fluid">
+	<section id="Cadastro" class="container-fluid">
 		<form id="formCadastro" action="cadastrado" method="post">
 			<div class="form-group">
 				<label for="inputNomeCompleto">Nome completo</label> <input
@@ -286,7 +193,7 @@ footer {
 			<button type="button" OnClick="Check()" class="btn btn-primary">Cadastrar</button>
 		</form>
 	</section>
-	<div class="background">
+	<div id="bg" class="background">
 		<img src="img/abstracts_accepted.jpg" alt="background"
 			class="img-fluid" />
 	</div>
