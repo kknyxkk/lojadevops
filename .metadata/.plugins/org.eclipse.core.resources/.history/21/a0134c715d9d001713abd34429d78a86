@@ -98,7 +98,6 @@ window.onload = function() {
 						<button class="btn btn-outline-info my-2 my-sm-0" type="button"
 							onclick="ErroValidacao()" id="BtnLogar">Entrar</button>
 					</div>
-					<div class="form-control mr-sm-1" id="NameField"></div>
 					<span class="Alert" id="Alert"></span>
 				</div>
 			</form>

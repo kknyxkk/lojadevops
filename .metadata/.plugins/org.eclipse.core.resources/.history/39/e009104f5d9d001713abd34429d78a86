@@ -151,7 +151,7 @@ window.onload = function() {
 				<div class="collapse navbar-collapse" id="navBarPrincipal">
 					<div class="navbar-nav">
 						<a class="nav-item nav-link" href="produtos">Produtos</a> <a
-							href="cadastro" id="BtnCadastrar"><button
+							href="cadastro"><button
 								class="btn btn-outline-secondary my-2 my-sm-0" type="button">Cadastrar</button>
 						</a>
 					</div>
@@ -167,7 +167,6 @@ window.onload = function() {
 							<button class="btn btn-outline-info my-2 my-sm-0" type="button"
 								onclick="ErroValidacao()" id="BtnLogar">Entrar</button>
 						</div>
-						<div class="form-control mr-sm-1" id="NameField"></div>
 						<span class="Alert" id="Alert"></span>
 					</div>
 				</form>

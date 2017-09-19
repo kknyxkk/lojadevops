@@ -83,7 +83,7 @@ window.onload = function() {
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
 					<a class="nav-item nav-link active" href="produtos">Produtos <span
-						class="sr-only">(current)</span></a><a href="cadastro" id="BtnCadastrar"><button
+						class="sr-only">(current)</span></a><a href="cadastro"><button
 							class="btn btn-outline-secondary my-2 my-sm-0" type="button">Cadastrar</button>
 					</a>
 				</div>
@@ -98,7 +98,6 @@ window.onload = function() {
 						<button class="btn btn-outline-info my-2 my-sm-0" type="button"
 							onclick="ErroValidacao()" id="BtnLogar">Entrar</button>
 					</div>
-					<div class="form-control mr-sm-1" id="NameField"></div>
 					<span class="Alert" id="Alert"></span>
 				</div>
 			</form>

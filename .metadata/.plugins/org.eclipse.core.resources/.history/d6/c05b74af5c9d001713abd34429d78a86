@@ -10,38 +10,14 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
-window.onload = function() {
-	
-	var url_string = location.href;
-	var UrlValue = url_string.split("=",2)[1];
-	
-	//values
-	//alert(UrlValue);
-	//alert(url_string);
-	
-	var Userinput = document.getElementById('Username');
-	var Passinput = document.getElementById('Password');
-	var BtnLogar = document.getElementById('BtnLogar');
-	var LinkCadastrar = document.getElementById('BtnCadastrar');
-	var NameField=document.getElementById('NameField');
-	NameField.style.display = 'none';
-	NameField.innerText = "";
-	
-	if(UrlValue===("true"))
-	{
-		//desativando 
-		Userinput.style.display = 'none';
-		Passinput.style.display = 'none';
-		BtnLogar.style.display = 'none';
-		LinkCadastrar.style.display = 'none';
-		NameField.style.display = 'block';
-		NameField.innerText = "Nome";
-		
-		
+	/*window.onload = function() {
+		var Form = document.getElementById('formLogin').action = get_action();
 	}
-	
-	
-}
+
+	function get_action() {
+		return "/http://localhost:9010/produtos";
+
+	}*/
 
 	function ErroValidacao() {
 
@@ -151,7 +127,7 @@ window.onload = function() {
 				<div class="collapse navbar-collapse" id="navBarPrincipal">
 					<div class="navbar-nav">
 						<a class="nav-item nav-link" href="produtos">Produtos</a> <a
-							href="cadastro" id="BtnCadastrar"><button
+							href="cadastro"><button
 								class="btn btn-outline-secondary my-2 my-sm-0" type="button">Cadastrar</button>
 						</a>
 					</div>
@@ -165,9 +141,8 @@ window.onload = function() {
 								class="form-control mr-sm-1" type="password" name="Password"
 								placeholder="Password" id="Password" />
 							<button class="btn btn-outline-info my-2 my-sm-0" type="button"
-								onclick="ErroValidacao()" id="BtnLogar">Entrar</button>
+								onclick="ErroValidacao()">Entrar</button>
 						</div>
-						<div class="form-control mr-sm-1" id="NameField"></div>
 						<span class="Alert" id="Alert"></span>
 					</div>
 				</form>

@@ -84,7 +84,7 @@ window.onload = function() {
 				</button>
 				<div class="collapse navbar-collapse" id="navBarPrincipal">
 					<div class="navbar-nav">
-						<a class="nav-item nav-link" href="produtos" id="BtnCadastrar">Produtos</a> <a
+						<a class="nav-item nav-link" href="produtos">Produtos</a> <a
 							href="cadastro"><button
 								class="btn btn-outline-secondary my-2 my-sm-0" type="button">Cadastrar</button>
 						</a>
@@ -99,9 +99,8 @@ window.onload = function() {
 								class="form-control mr-sm-1" type="password" name="Password"
 								placeholder="Password" id="Password" />
 							<button class="btn btn-outline-info my-2 my-sm-0" type="button"
-								onclick="ErroValidacao()" id="BtnLogar">Entrar</button>
+								onclick="ErroValidacao()">Entrar</button>
 						</div>
-						<div class="form-control mr-sm-1" id="NameField"></div>
 						<span class="Alert" id="Alert"></span>
 					</div>
 				</form>
