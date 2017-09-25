@@ -1,0 +1,56 @@
+pipeline {
+agent {
+    node {
+        label ''
+        customWorkspace 'C:/Users/teste/Desktop/workspace/Lojadevops'
+    }
+}
+tools {
+    maven 'mvn 3.5.0' 
+}
+stages {
+        stage('Check_Version') {
+            steps {
+                bat 'mvn -v'           }
+        }
+        stage('Maven_Build'){
+            steps{
+                bat 'mvn clean verify'
+                // archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+            }
+        }
+        stage('Nexus_Repository'){
+            steps{
+                nexusArtifactUploader artifacts: [[artifactId: 'JKFILE.LojaDevops', 
+                classifier: '', 
+                file: 'target/jovemprofissional-0.0.1.jar', 
+                type: 'jar']], credentialsId: 'NexusAdmin', 
+                groupId: 'JKFile', 
+                nexusUrl: '172.20.149.158:8081/nexus/content/repositories/Jenkins', 
+                nexusVersion: 'nexus2', 
+                protocol: 'http', 
+                repository: 'Jenkins', 
+                version: '0.${BUILD_ID}'
+            }
+        }
+        stage('SonarQ_Analisys'){
+                steps{
+                    bat 'mvn sonar:sonar -sC:/Users/teste/Desktop/workspace/Lojadevops/SonarQube.Analysis.xml'
+                }
+            }
+            stage ('Run JMeter Test'){
+                steps{
+                    bat 'C:/Users/teste/Downloads/Apps/apache-jmeter-3.3/apache-jmeter-3.3/bin/jmeter.bat -n -t C:/Users/teste/Downloads/Apps/apache-jmeter-3.3/apache-jmeter-3.3/bin/TesteLoja.jmx -l test.jtl'
+                }
+            }
+    }
+    post {
+        success {
+            echo 'Build efetuado com sucesso'
+
+        }
+        failure {
+            echo 'Ocorreu um erro durante a pipeline :('
+        }
+    }
+}
