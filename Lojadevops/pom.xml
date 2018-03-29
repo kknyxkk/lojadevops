@@ -77,11 +77,21 @@
 				<version>3.1</version>
 				<configuration>
 					<fork>true</fork>
-					<executable>C:\Program Files\Java\jdk1.8.0_144\bin\javac.exe</executable>
+					<executable>${JAVA_HOME}/bin/javac</executable>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+	<properties>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+		<sonar.login>admin</sonar.login>
+		<sonar.password>admin</sonar.password>
+		<sonar.sources>./src/main</sonar.sources>
+		<sonar.projectKey>LojaDevops</sonar.projectKey>
+		<sonar.projectName>LojaDevops</sonar.projectName>
+		<sonar.projectVersion>1.0</sonar.projectVersion>
+		<sonar.exclusions>src/test</sonar.exclusions>	
+	</properties>
 </project>
 
 

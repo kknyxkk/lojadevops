@@ -22,7 +22,7 @@
 	<Property Name="sonar.host.url">http://localhost:9000</Property>
 	<Property Name="sonar.login">admin</Property>
 	<Property Name="sonar.password">admin</Property>
-	<Property Name="sonar.sources">C:/Users/teste/Desktop/workspace/Lojadevops</Property>
+	<Property Name="sonar.sources">./Lojadevops</Property>
 	<Property Name="sonar.projectKey">LojaDevops</Property>
 	<Property Name="sonar.projectName">LojaDevops</Property>
 	<Property Name="sonar.projectVersion">1.0</Property>
