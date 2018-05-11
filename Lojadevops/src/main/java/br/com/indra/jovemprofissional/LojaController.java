@@ -2,21 +2,16 @@ package br.com.indra.jovemprofissional;
 
 
 //classes minhas
-import br.com.indra.jovemprofissional.repository.*;
-import br.com.indra.jovemprofissional.model.*;
 
 //spring
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LojaController {
 	
-	@Autowired
-	private UserRepository repository;
+	//@Autowired
+	//private UserRepository repository;
 	
 	//Mapeamento do Index
 	@RequestMapping("/")
@@ -35,7 +30,7 @@ public class LojaController {
 	}
 
 	//Metodo de checagem do login com o banco de dados
-	@RequestMapping(value= "logar", method = RequestMethod.POST)
+	/*@RequestMapping(value= "logar", method = RequestMethod.POST)
 	public String verificar(@RequestParam("Username") String nome, @RequestParam("Password") String senha)
 	{
 		
@@ -60,14 +55,14 @@ public class LojaController {
 		}
 		return "indexLoja";		
 
-	}
+	}*/
 
 	//mapeamento cadastro
-	@RequestMapping("cadastrado")
+	/*@RequestMapping("cadastrado")
 	public String salvar(@RequestParam("username") String nome, @RequestParam("password") String senha,@RequestParam("nomeCompleto") String nomeCom,@RequestParam("email") String email){
 
 		if(valida(nome) && valida(senha) && valida(nomeCom) && valida(email)){
-			System.out.println("Não existe");
+			System.out.println("Nï¿½o existe");
 			if(!repository.exists(nome) || !repository.exists(email)){
 				System.out.println("Criando objeto");
 				Usuario novoUsuario = new Usuario();
@@ -89,9 +84,9 @@ public class LojaController {
 			System.out.println("erro cadastro");
 			return "cadastro";
 		}
-	}
+	}*/
 
-	//metodo de validação para inputs diferentes de null
+	//metodo de validaï¿½ï¿½o para inputs diferentes de null
 	public Boolean valida(String entrada)
 	{
 		if(!entrada.isEmpty())
