@@ -1,9 +1,0 @@
-
-C:\Users\teste\Desktop\workspace\Lojadevops>mvn clean verify 
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] ------------------------------------------------------------------------
-[INFO] Building jovemprofissional 0.0.1
-[INFO] ------------------------------------------------------------------------
-Downloading: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/1.5.7.RELEASE/spring-boot-starter-web-1.5.7.RELEASE.pom
-Downloading: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-actuator/1.5.7.RELEASE/spring-boot-starter-actuator-1.5.7.RELEASE.pom
